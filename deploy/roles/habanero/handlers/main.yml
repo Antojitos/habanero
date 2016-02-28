@@ -1,0 +1,9 @@
+---
+- name: update supervisor
+  command: supervisorctl update
+
+- name: restart supervisor
+  command: supervisorctl restart habanero
+
+- name: reload nginx
+  service: name=nginx state=reloaded

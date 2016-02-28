@@ -1,0 +1,10 @@
+[program:habanero]
+command = gunicorn -b {{ gunicorn_host }}:{{ gunicorn_port }} -w {{ gunicorn_workers }} habanero:app
+environment = HABANERO_SETTINGS="/etc/habanero/config.py"
+
+autostart = true
+autorestart = true
+
+redirect_stderr = False
+stdout_logfile = /var/log/supervisor/habanero_stdout.log
+stderr_logfile = /var/log/supervisor/habanero_stderr.log

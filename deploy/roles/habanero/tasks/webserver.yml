@@ -1,0 +1,22 @@
+---
+# Install and configure nginx
+
+- name: install nginx server
+  apt: name=nginx-full state=present
+
+- name: create private letsencrypt directory
+  file: path=/etc/habanero/letsencrypt state=directory mode=0755 recurse=yes
+
+- name: create server root directory
+  file: path={{ habanero_server_root_dir }} state=directory mode=0755
+
+- name: create letsencrypt challanges directory
+  file: path={{ habanero_server_root_dir }}/challenge state=directory mode=0755
+
+- name: create configuration file for habanero site
+  template: src=nginx-habanero.site.j2 dest=/etc/nginx/sites-available/{{ habanero_server_name }}
+  notify: reload nginx
+
+- name: enable habanero site
+  file: src=/etc/nginx/sites-available/{{ habanero_server_name }} dest=/etc/nginx/sites-enabled/{{ habanero_server_name }} state=link
+  notify: reload nginx

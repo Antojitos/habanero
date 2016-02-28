@@ -1,0 +1,6 @@
+[servers]
+web1.example.com
+
+[servers:vars]
+habanero_server_name=habanero.example.com
+habanero_server_root_dir=/var/www/habanero.example.com

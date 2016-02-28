@@ -47,3 +47,8 @@ You can interact with the Habanero server using ``curl``::
       "message": "User myuser authenticated for App1."
     }
 
+
+Deployment
+----------
+
+For deployment details see `deploy/README.rst <deploy/README.rst>`_

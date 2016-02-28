@@ -8,7 +8,7 @@ def index():
     data = {
         'name': 'habanero',
         'version': __version__,
-        'url': 'http://habanero.antojitos.io/',
+        'url': 'https://github.com/Antojitos/habanero',
     }
     return jsonify(**data)
 

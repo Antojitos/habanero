@@ -32,7 +32,9 @@ Usage
 
 You can interact with the Habanero server using ``curl``::
 
-    $ curl -i -H "X-API-KEY: DqX03pg2dJfBma" -H "X-API-SECRET: aaa7bf61cb722c1680165f991db3f0371de438f6" 127.0.0.1:5000/api/v1/auth
+    $ curl -i http://127.0.0.1:5000/api/v1/auth \
+           -H "X-Api-Key: DqX03pg2dJfBma" \
+           -H "X-Api-Secret: aaa7bf61cb722c1680165f991db3f0371de438f6"
     HTTP/1.0 200 OK
     Content-Type: application/json
     Content-Length: 57

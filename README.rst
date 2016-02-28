@@ -40,6 +40,8 @@ You can interact with the Habanero server using ``curl``::
     Content-Length: 57
     Server: Werkzeug/0.11.4 Python/2.7.6
     Date: Sun, 28 Feb 2016 00:55:44 GMT
+    X-Auth-App: App1
+    X-Auth-Username: myuser
     
     {
       "message": "User myuser authenticated for App1."

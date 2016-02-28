@@ -1,4 +1,4 @@
-from flask import jsonify, request
+from flask import jsonify, request, make_response
 
 from habanero import app, __version__
 
@@ -16,15 +16,18 @@ def index():
 @app.route("/api/v1/auth", methods=['GET'])
 def auth():
     api_keys = app.config['API_KEYS']
-    key = request.headers.get('x-api-key')
-    secret = request.headers.get('x-api-secret')
+    key = request.headers.get('X-Api-Key')
+    secret = request.headers.get('X-Api-Secret')
 
     if key in api_keys:
         username, secrets = api_keys[key]
         if secret in secrets:
             app_name = secrets[secret]
             message = 'User %s authenticated for %s.' % (username, app_name)
-            return jsonify({'message': message}), 200
+            response = make_response(jsonify({'message': message}), 200)
+            response.headers.extend({'X-Auth-App': app_name})
+            response.headers.extend({'X-Auth-Username': username})
+            return response
 
     message = 'Authentication credentials were missing or incorrect.'
     return jsonify({'message': message}), 401

@@ -7,14 +7,14 @@ with open('README.rst') as file:
 
 setup(
     name="habanero",
-    version="0.1.0",
+    version="0.1.1",
     author="Pablo SEMINARIO",
     author_email="pablo@seminar.io",
     description="The hottest authentication pepper available.",
     long_description=long_description,
     license="GNU General Public License v3 (GPLv3)",
     url="https://github.com/Antojitos/habanero",
-    download_url="https://github.com/Antojitos/habanero/archive/0.1.0.tar.gz",
+    download_url="https://github.com/Antojitos/habanero/archive/0.1.1.tar.gz",
     keywords=["habanero", "auth", "auth_request"],
     classifiers=[
         'Development Status :: 5 - Production/Stable',

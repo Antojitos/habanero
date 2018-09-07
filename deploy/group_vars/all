@@ -1,7 +1,7 @@
 ---
 # Variables listed here are applicable to all host groups
 
-habanero_version: "0.1.0"
+habanero_version: "0.1.1"
 habanero_server_name: "habanero.example.com"
 habanero_server_root_dir: "/var/www/habanero.example.com"
 

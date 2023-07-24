@@ -30,6 +30,6 @@ setup(
     package_dir={'': 'src'},
     packages=find_packages('src'),
     install_requires=[
-        'Flask==0.12.3',
+        'Flask==2.2.5',
     ],
 )
